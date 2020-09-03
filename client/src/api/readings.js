@@ -1,5 +1,5 @@
 /**
- * requests for reading resources are handled here
+ * requests for reading resources are implemented here
  */
 
 const getReadings = async () => {
