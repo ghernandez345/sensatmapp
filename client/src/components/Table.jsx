@@ -14,15 +14,21 @@ const Table = (props) => {
     title,
     columns,
     data,
-    options
+    sorting,
+    filtering
   } = props;
 
   return (
-    <MaterialTable 
+    <MaterialTable
       title={title}
       columns={columns}
       data={data}
-      options={options}
+      options={{
+        sorting: sorting,
+        filtering: filtering,
+        search: false,
+        draggable: false
+      }}
     />
   );
 };
@@ -34,18 +40,14 @@ Table.propTypes = {
     field: PropTypes.string.isRequired
   })).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  options: PropTypes.shape({
-    sorting: PropTypes.bool,
-    filtering: PropTypes.bool
-  })
+  sorting: PropTypes.bool,
+  filtering: PropTypes.bool
 };
 
 Table.defaultProps = {
   title: '',
-  options: {
-    sorting: false,
-    filtering: false
-  }
+  sorting: false,
+  filtering: false
 };
 
 
