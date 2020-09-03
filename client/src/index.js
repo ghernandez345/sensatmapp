@@ -1,11 +1,15 @@
+/**
+ * Bootstraps application and adds it to the DOM
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Readings from './features/Readings';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Readings />
   </React.StrictMode>,
   document.getElementById('root')
 );

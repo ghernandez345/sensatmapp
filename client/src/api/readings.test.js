@@ -34,7 +34,7 @@ describe('readings api', () => {
     });
 
     it('should resolve to an error result if the response is not 200', async () => {
-      // mocks fetch implementation
+      // mocks fetch implementation to resolve with an error
       global.fetch = jest.fn(() =>
         Promise.resolve({
           json: () => Promise.resolve({}),
