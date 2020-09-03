@@ -1,6 +1,11 @@
+/**
+ * quick node server for serving readings 
+ * */ 
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const readings = require("./data/sensor_readings.json");
+
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
