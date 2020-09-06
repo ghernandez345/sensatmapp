@@ -24,6 +24,7 @@ const findInsertionPoint = (element, array, comparator) => {
       high = mid;
     } else {
       low = mid;
+      break;
     }
   }
   return low;
