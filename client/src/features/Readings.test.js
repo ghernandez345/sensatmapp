@@ -17,7 +17,7 @@ describe('Readings feature', () => {
   it('should render a loading state when it initally renders', async () => {
     // we dont care about the response. just what our inital render is.
     global.fetch = jest.fn().mockResolvedValueOnce({
-      json: () => Promise.resolve({readings: []}),
+      json: async () => ({readings: []}),
       status: 200
     });
 
@@ -46,7 +46,7 @@ describe('Readings feature', () => {
       ]
     };
     global.fetch = jest.fn().mockResolvedValueOnce({
-      json: () => Promise.resolve(mockReadings),
+      json: async () => (mockReadings),
       status: 200
     });
 
