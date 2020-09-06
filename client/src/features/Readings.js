@@ -5,6 +5,7 @@
 import React, {useState, useEffect} from 'react';
 import readingsAPI from '../api/readings';
 import Table from '../components/Table';
+import Aggregator from '../services/aggregator';
 import './Readings.css';
 
 const columns = [
@@ -20,9 +21,15 @@ const columns = [
   { title: 'Timestamp', field: 'reading_ts', filtering: false },
 ];
 
+const medianColumns = [
+  { title: 'Sensor Type', field: 'sensor_type' },
+  { title: 'Median', field: 'median' },
+  { title: 'Unit', field: 'unit' },
+];
 
 const Readings = () => {
   const [readingData, setReadingData] = useState(null);
+  const [medianData, setMedianData] = useState(null);
   const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
@@ -30,28 +37,41 @@ const Readings = () => {
     // can be async though.
     const fetchReadings = async () => {
       const res = await readingsAPI.getReadings();
-      setReadingData(res.readings);
       if (res.error) {
         setFetchError(true);  
       } else {
         setReadingData(res.readings);
       }
     }
-    fetchReadings()
+    fetchReadings();
   }, []);
 
+  useEffect(() => {
+    const medianData = Aggregator.getMedianData(readingData);
+    setMedianData(medianData);
+  }, [readingData]);
+
   if (fetchError) return 'There was a problem recieving the data';
-  if (readingData === null) return 'Loading...';
+  if (readingData === null || medianData === null) return 'Loading...';
 
   return (
-    <div className='Readings'>
-      <Table 
-        title='Reading Data'
-        columns={columns}
-        data={readingData}
-        sorting={true}
-        filtering={true}
-      />
+    <div>
+      <div className='table-container'>
+        <Table 
+          title='Reading Data'
+          columns={columns}
+          data={readingData}
+          sorting={true}
+          filtering={true}
+        />
+      </div>
+      <div className='table-container'>
+        <Table
+          title='Median Data'
+          columns={medianColumns}
+          data={medianData}
+        />
+      </div>
     </div>
   );
 }
