@@ -16,6 +16,7 @@ const Aggregator = {
    * ]
    */
   getMedianData: (data) => {
+    if (data === null) return null;
     const sensorTypeMapping = reduceBySensorType(data);
     return computeMedians(sensorTypeMapping);
   }
