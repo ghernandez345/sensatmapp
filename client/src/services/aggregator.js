@@ -53,9 +53,6 @@ const computeMedians = (sensorMapping) => {
   return medians;
 };
 
-/**
- * Handles creation of median values for odd and even datasets
- */
 const setMedian = (sensorData) => {
   const readings = sensorData.readings;
   const midpoint = parseInt(readings.length / 2);
