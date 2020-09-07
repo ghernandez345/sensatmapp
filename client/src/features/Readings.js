@@ -76,6 +76,4 @@ const Readings = () => {
   );
 }
 
-readingsAPI.getReadings();
-
 export default Readings;
