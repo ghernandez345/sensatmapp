@@ -44,19 +44,19 @@ The project utilises the single responsibility principle and has some key module
 
 This module is concerned with making api calls for sensor reading resources.
 
-### Table UI component
+#### Table UI component
 
 This module is concerned with displaying a table UI. This component wraps another 3rd party UI component (`material-table`) so that if in the future we'd like to change the 3rd party component we only have to do it here and can keep the interface defined by the Table component.
 
 I chose to use `material-table` as is offered me a quick way to implement the required functionality, but with more time would have done a more thorough investigation on what 3rd party table UIs were available or consider if I should build my own.
 
-### Reading feature module
+#### Reading feature module
 
 This module is responsible for bringing together all other required modules (UI, api, aggregator) to create the data reading tables feature.
 
 For this component I chose to utilise react hooks so that I could group my concerns together (e.g. fetching data, setting error states, aggregating data). For a larger project I'd consider more if I'd use these or stick to more established react patterns.
 
-### Aggregator module
+#### Aggregator module
 
 This module is responsible for taking in a sensor reading dataset and aggregating that data in some way. For now it only aggregates for the median, but can be extended for other types of aggregations in the future.
 
@@ -64,7 +64,7 @@ I had a bit of fun with this module and wrote it to create a mapping of the read
 
 While this takes more space it greatly improves the speed in which new readings could be added into the existing ones and new aggregations calculated. It may be a preoptimisation, but overall it fulfills the requirements while being able to be extended in the future.
 
-### Sorting utilites module
+#### Sorting utilites module
 
 This module is responsible for offering utility functions for sorting items in an array. These methods are generic and do not care what type of data they are operating on.
 
