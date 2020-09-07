@@ -82,7 +82,7 @@ The modules that did not render a UI were tested with standard unit testing prac
 
 ### Reading feature testing
 
-This module was testing more with integration testing approach. Since this component brought together many other modules (UI, aggregators, fetch calls) I wanted to make sure these all worked properly together and did not want to mock them in these tests. You can see that the tests render the Reading feature into the virtual dom and makes assertions on what a user sees. It does not care about the internal implementation of the Reading feature.
+This module was testing more with an integration testing approach. Since this component brought together many other modules (UI, aggregators, fetch calls) I wanted to make sure these all worked properly together and did not want to mock them in these tests. You can see that the tests render the Reading feature into the virtual dom and makes assertions on what a user sees. It does not care about the internal implementation of the Reading feature.
 
 ### Mocking of fetch calls
 
