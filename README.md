@@ -86,7 +86,7 @@ This module was testing more with an integration testing approach. Since this co
 
 ### Mocking of fetch calls
 
-I choose to mock the use of `fetch` calls to simplify the testing setup. I did not not to make actual api calls for this layer of testing as it seemed unneccesary for client only tests. I'd expect these to be covered at the e2e layer.
+I choose to mock the use of `fetch` calls to simplify the testing setup. I did not want to make actual api calls for this layer of testing as it seemed unneccesary for client only tests. I'd expect these to be covered at the e2e layer.
 
 ### No testing for table UI and interactions
 
