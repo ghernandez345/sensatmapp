@@ -10,7 +10,7 @@ This project displayes a collection readings in a tabular UI.
 
 2. cd into project and install all required dependencies
 
-`cd sensatmapp && npm i installDeps`
+`cd sensatmapp && npm run installDeps`
 
 3. start the project
 
