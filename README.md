@@ -34,7 +34,7 @@ Below I try to explain some of these design decisions.
 
 ### Project Setup
 
-This project is a combination of a SPA seeded from create-react-app and a light express web server. `create-react-app` gave me a good starting point for the web UI and I decided to create the node server to serve the `sensor_readings.json` file. Chome does not allow you to fetch local json files for security reasons and they must be served to the client from a web server.
+This project is a combination of a SPA seeded from `create-react-app` and a light express web server. `create-react-app` gave me a good starting point for the web UI and I decided to create the node server to serve the `sensor_readings.json` file. Chome does not allow you to fetch local json files for security reasons and they must be served to the client from a web server.
 
 ### Key Modules
 
